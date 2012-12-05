@@ -27,8 +27,19 @@
 	<config-file template="nmml.template" output="project.nmml" />
 
 	<dependencies>
+        <!-- haxelib does not work on slow network : <haxelib name="flambe" version="1.5" /> -->
+
+        <!--<sourcezip url="https://github.com/aduros/flambe/archive/flambe-1.5.zip" >
+            <sources>
+                <source path="\^[^/]+/src$\"/>
+            </sources>
+        </sourcezip>
+        <haxelib name="format" /> -->
+        <!--<haxelib name="nape" />-->
+
         <haxelib name="flambe" version="1.2" />
+
         <repository id="com.wighawag.report.Report" version="0.0.1" />
-        <repository id="com.wighawag.view" version="0.0.1" />
+        <repository id="com.wighawag.asset" version="0.0.1" />
 	</dependencies>
 </project>

@@ -1,6 +1,5 @@
 package;
 
-import com.wighawag.view.flambe.FlambeStage3DRenderer;
 import massive.munit.util.Timer;
 import massive.munit.Assert;
 import massive.munit.async.AsyncFactory;
@@ -16,7 +15,10 @@ class ExampleTest
 	
 	public function new() 
 	{
-        new FlambeStage3DRenderer();
+        #if flash
+            var renderer = new com.wighawag.asset.renderer.flambe.FlambeStage3DRenderer();
+            new com.wighawag.asset.renderer.FlambeSpriteRenderer(renderer);
+        #end
 	}
 	
 	@BeforeClass
