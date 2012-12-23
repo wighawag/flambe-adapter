@@ -44,18 +44,14 @@ class FlambeSpriteRenderer  implements Renderer<NMEDrawingContext, TextureAtlas>
         // TODO
     }
 
-    private var flambeContext : DrawingContext;
+
     // TODO implement lock mechanism
     public function lock():NMEDrawingContext {
-        flambeContext = flambeRenderer.lock();
-        context.setFlambeContext(flambeContext);
-        flambeContext.save();
+        context.setFlambeContext(flambeRenderer.lock());
         return context;
     }
 
     public function unlock():Void {
-        flambeContext.restore();
-        flambeContext = null;
         flambeRenderer.unlock();
     }
 

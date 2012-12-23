@@ -10,10 +10,13 @@ class FlambeStage3DRenderer extends flambe.platform.flash.Stage3DRenderer, imple
     }
 
     public function lock() : DrawingContext{
-        return super.willRender();
+        super.willRender();
+	    _drawCtx.save();
+	    return _drawCtx;
     }
 
     public function unlock() : Void{
+	    _drawCtx.restore();
         super.didRender();
     }
 
