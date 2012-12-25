@@ -10,6 +10,14 @@ import com.wighawag.asset.spritesheet.SubTexture;
 
 class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
 
+	// TODO use matrix here or State
+	public var xTranslation(default, null) : Int;
+	public var yTranslation(default, null) : Int;
+
+	//TODO :
+	public var width(default,null) : Int = 999999; // 999999 for now should be enough
+	public var height(default,null) : Int = 999999;
+
     private var flambeContext : DrawingContext;
     private var texturesMap : Hash<FlashTexture>;
 
