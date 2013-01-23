@@ -51,6 +51,8 @@ class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
 
     public function translate(xOffset:Int, yOffset:Int):Void {
         flambeContext.translate(xOffset, yOffset);
+        xTranslation += xOffset;
+        yTranslation += yOffset;
     }
 
     public function save():Void {
@@ -59,6 +61,9 @@ class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
 
     public function restore():Void {
         flambeContext.restore();
+        //TODO:
+        xTranslation = 0;
+        yTranslation = 0;
     }
 
 }
