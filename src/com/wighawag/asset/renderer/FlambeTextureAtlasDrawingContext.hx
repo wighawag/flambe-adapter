@@ -13,6 +13,8 @@ class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
 	// TODO use matrix here or State
 	public var xTranslation(default, null) : Int;
 	public var yTranslation(default, null) : Int;
+    public var scaleX(default, null) : Float;
+    public var scaleY(default, null) : Float;
 
 	//TODO :
 	public var width(default,null) : Int = 999999; // 999999 for now should be enough
@@ -51,8 +53,14 @@ class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
 
     public function translate(xOffset:Int, yOffset:Int):Void {
         flambeContext.translate(xOffset, yOffset);
-        xTranslation += xOffset;
-        yTranslation += yOffset;
+        xTranslation += Std.int(xOffset * scaleX);
+        yTranslation += Std.int(yOffset * scaleY);
+    }
+
+    public function scale(scaleX : Float, scaleY : Float):Void {
+        flambeContext.scale(scaleX,scaleY);
+        this.scaleX *= scaleX;
+        this.scaleY *= scaleY;
     }
 
     public function save():Void {
@@ -64,6 +72,8 @@ class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
         //TODO:
         xTranslation = 0;
         yTranslation = 0;
+        scaleX = 1;
+        scaleY = 1;
     }
 
 }
