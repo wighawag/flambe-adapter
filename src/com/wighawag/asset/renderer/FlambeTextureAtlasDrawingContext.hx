@@ -11,8 +11,8 @@ import com.wighawag.asset.spritesheet.SubTexture;
 class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
 
 	// TODO use matrix here or State
-	public var xTranslation(default, null) : Int;
-	public var yTranslation(default, null) : Int;
+	public var xTranslation(default, null) : Float;
+	public var yTranslation(default, null) : Float;
     public var scaleX(default, null) : Float;
     public var scaleY(default, null) : Float;
 
@@ -51,10 +51,10 @@ class FlambeTextureAtlasDrawingContext implements NMEDrawingContext{
         }
     }
 
-    public function translate(xOffset:Int, yOffset:Int):Void {
+    public function translate(xOffset:Float, yOffset:Float):Void {
         flambeContext.translate(xOffset, yOffset);
-        xTranslation += Std.int(xOffset * scaleX);
-        yTranslation += Std.int(yOffset * scaleY);
+        xTranslation += xOffset * scaleX;
+        yTranslation += yOffset * scaleY;
     }
 
     public function scale(scaleX : Float, scaleY : Float):Void {
