@@ -4,7 +4,8 @@
 	<compiler-version>2.10</compiler-version>
 	
 	<id>com.wighawag.flambe-adapter</id>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.1.1</version>
+	<prepared>2013-02-23 21:26:05</prepared>
 
 	<main>Main</main>
 	
@@ -27,8 +28,8 @@
 	<config-file template="nmml.template" output="project.nmml" />
 
 	<dependencies>
-               	<repository id="com.wighawag.wighawag-flambe" version="0.1.1-SNAPSHOT" />
-        	<repository id="com.wighawag.report.Report" version="0.1.1-SNAPSHOT" />
-	        <repository id="com.wighawag.asset" version="0.1.1-SNAPSHOT" />
+               	<repository id="com.wighawag.wighawag-flambe" version="0.1.1" />
+        	<repository id="com.wighawag.report.Report" version="0.1.1" />
+	        <repository id="com.wighawag.asset" version="0.1.1" />
 	</dependencies>
 </project>
